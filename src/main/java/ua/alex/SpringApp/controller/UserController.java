@@ -1,4 +1,4 @@
-package ua.alex.springApp.controller;
+package ua.alex.SpringApp.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,12 +9,16 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import ua.alex.springApp.model.Product;
-import ua.alex.springApp.model.User;
-import ua.alex.springApp.service.ProductService;
-import ua.alex.springApp.service.SecurityService;
-import ua.alex.springApp.service.UserService;
-import ua.alex.springApp.validator.UserValidator;
+import ua.alex.SpringApp.model.Product;
+import ua.alex.SpringApp.model.Role;
+import ua.alex.SpringApp.model.User;
+import ua.alex.SpringApp.service.ProductService;
+import ua.alex.SpringApp.service.SecurityService;
+import ua.alex.SpringApp.service.UserService;
+import ua.alex.SpringApp.validator.UserValidator;
+
+import java.util.Iterator;
+import java.util.Set;
 
 @Controller
 public class UserController {

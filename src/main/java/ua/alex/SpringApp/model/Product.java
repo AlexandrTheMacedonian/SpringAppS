@@ -1,4 +1,4 @@
-package ua.alex.springApp.model;
+package ua.alex.SpringApp.model;
 
 import javax.persistence.*;
 

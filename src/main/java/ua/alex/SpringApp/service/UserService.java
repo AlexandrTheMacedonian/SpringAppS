@@ -1,7 +1,7 @@
-package ua.alex.springApp.service;
+package ua.alex.SpringApp.service;
 
 
-import ua.alex.springApp.model.User;
+import ua.alex.SpringApp.model.User;
 
 public interface UserService {
     void save(User user);

@@ -1,8 +1,8 @@
-package ua.alex.springApp.dao;
+package ua.alex.SpringApp.dao;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ua.alex.springApp.model.User;
+import ua.alex.SpringApp.model.User;
 
 public interface UserDao extends JpaRepository<User, Long> {
     User findByUsername(String username);

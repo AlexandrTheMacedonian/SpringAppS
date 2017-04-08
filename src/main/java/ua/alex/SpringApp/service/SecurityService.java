@@ -1,4 +1,4 @@
-package ua.alex.springApp.service;
+package ua.alex.SpringApp.service;
 
 /**
  *

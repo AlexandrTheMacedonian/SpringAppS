@@ -7,7 +7,7 @@
         </encoder>
     </appender>
 
-    <logger name="ua.alex.springApp">
+    <logger name="ua.alex.SpringApp">
         <level value="debug"/>
     </logger>
 

@@ -1,14 +1,11 @@
-package ua.alex.springApp.dao;
+package ua.alex.SpringApp.service;
 
-import ua.alex.springApp.model.Product;
+import ua.alex.SpringApp.model.Product;
 
 import java.util.List;
 
-/**
- * Data accsess object.
- */
 
-public interface ProductDao {
+public interface ProductService {
     void add(Product product);
     void update(Product product);
     void delete(int id);

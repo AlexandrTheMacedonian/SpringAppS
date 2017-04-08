@@ -1,4 +1,4 @@
-package ua.alex.springApp.validator;
+package ua.alex.SpringApp.validator;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-import ua.alex.springApp.model.User;
-import ua.alex.springApp.service.UserService;
+import ua.alex.SpringApp.model.User;
+import ua.alex.SpringApp.service.UserService;
 
 @Component
 public class UserValidator implements Validator {

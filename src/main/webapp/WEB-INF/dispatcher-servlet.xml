@@ -19,7 +19,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>ua.alex.springApp.model.Product</value>
+                <value>ua.alex.SpringApp.model.Product</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -30,11 +30,11 @@
         </property>
     </bean>
 
-    <bean id="productDao" class="ua.alex.springApp.dao.ProductDaoImpl">
+    <bean id="productDao" class="ua.alex.SpringApp.dao.ProductDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="productService" class="ua.alex.springApp.service.ProductServiceImpl">
+    <bean id="productService" class="ua.alex.SpringApp.service.ProductServiceImpl">
         <property name="productDao" ref="productDao"/>
     </bean>
 

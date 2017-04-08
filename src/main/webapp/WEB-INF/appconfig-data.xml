@@ -19,7 +19,7 @@
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="ua.alex.springApp.model"/>
+        <property name="packagesToScan" value="ua.alex.SpringApp.model"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
         </property>
@@ -38,5 +38,5 @@
 
     <tx:annotation-driven/>
 
-    <jpa:repositories base-package="ua.alex.springApp.dao"/>
+    <jpa:repositories base-package="ua.alex.SpringApp.dao"/>
 </beans>

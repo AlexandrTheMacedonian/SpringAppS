@@ -1,10 +1,9 @@
-package ua.alex.springApp.service;
+package ua.alex.SpringApp.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ua.alex.springApp.dao.ProductDao;
-import ua.alex.springApp.model.Product;
+import ua.alex.SpringApp.dao.ProductDao;
+import ua.alex.SpringApp.model.Product;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package ua.alex.springApp.dao;
+package ua.alex.SpringApp.dao;
 
 
 import org.hibernate.Session;
@@ -6,7 +6,7 @@ import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
-import ua.alex.springApp.model.Product;
+import ua.alex.SpringApp.model.Product;
 
 import java.util.List;
 
