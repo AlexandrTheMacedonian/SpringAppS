@@ -2,19 +2,30 @@ package ua.alex.springApp.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ua.alex.springApp.model.Product;
 import ua.alex.springApp.model.User;
+import ua.alex.springApp.service.ProductService;
 import ua.alex.springApp.service.SecurityService;
 import ua.alex.springApp.service.UserService;
 import ua.alex.springApp.validator.UserValidator;
 
 @Controller
 public class UserController {
+
+    private ProductService productService;
+
+    @Autowired
+    @Qualifier(value = "productService")
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
+    }
 
     @Autowired
     private UserService userService;
@@ -55,11 +66,15 @@ public class UserController {
 
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String welcome(Model model) {
+        model.addAttribute("product", new Product());
+        model.addAttribute("listproducts", productService.getAll());
         return "welcome";
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String admin(Model model) {
+        model.addAttribute("product", new Product());
+        model.addAttribute("listproducts", productService.getAll());
         return "admin";
     }
 }

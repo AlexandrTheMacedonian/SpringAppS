@@ -28,12 +28,12 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @RequestMapping(value = "products", method = RequestMethod.GET)
+   /* @RequestMapping(value = "products", method = RequestMethod.GET)
     public String listProducts(Model model){
         model.addAttribute("product", new Product());
         model.addAttribute("listproducts", productService.getAll());
         return "products";
-    }
+    }*/
 
     @RequestMapping(value = "products/add", method = RequestMethod.POST)
     public String addProduct(@ModelAttribute Product product){
