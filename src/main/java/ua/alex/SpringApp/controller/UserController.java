@@ -3,6 +3,8 @@ package ua.alex.SpringApp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -69,11 +71,12 @@ public class UserController {
     }
 
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
-    public String welcome(Model model) {
+    public String welcome(Model model, Authentication authentication) {
         model.addAttribute("product", new Product());
         model.addAttribute("listproducts", productService.getAll());
-
-        return "welcome";
+        Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
+        if (roles.contains("ROLE_ADMIN")) {return "admin";}
+        else {return "welcome";}
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
