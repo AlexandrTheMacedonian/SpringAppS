@@ -27,14 +27,14 @@ public class ProductDaoImpl implements ProductDao {
     public void add(Product product) {
         Session session = this.sessionFactory.getCurrentSession();
         session.persist(product);
-        logger.info("Product successfully added./nProduct info:/n"+product);
+        logger.info("Product successfully added.\nProduct info:\n"+product);
     }
 
     @Override
     public void update(Product product) {
         Session session = this.sessionFactory.getCurrentSession();
         session.update(product);
-        logger.info("Product successfully updated./nProduct info:/n"+product);
+        logger.info("Product successfully updated.\nProduct info:\n"+product);
     }
 
     @Override
@@ -42,14 +42,14 @@ public class ProductDaoImpl implements ProductDao {
         Session session = this.sessionFactory.getCurrentSession();
         Product product = (Product) session.load(Product.class, id);
         if (product!=null) session.delete(product);
-        logger.info("Product successfully removed./nProduct info:/n"+product);
+        logger.info("Product successfully removed.\nProduct info:\n"+product);
     }
 
     @Override
     public Product getById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
         Product product = (Product) session.load(Product.class, id);
-        logger.info("Successfully got product by id.");
+        logger.info("Successfully got product by id.\n Product: " + product);
         return product;
     }
 

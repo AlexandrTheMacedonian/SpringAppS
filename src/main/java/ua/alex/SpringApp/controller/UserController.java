@@ -72,6 +72,7 @@ public class UserController {
     public String welcome(Model model) {
         model.addAttribute("product", new Product());
         model.addAttribute("listproducts", productService.getAll());
+
         return "welcome";
     }
 

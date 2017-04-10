@@ -45,7 +45,7 @@ public class SecurityServiceImpl implements SecurityService {
 
         if (authenticationToken.isAuthenticated()) {
             SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-            logger.debug("Successfully %s auti logged in", username);
+            logger.debug("Successfully %s auto logged in", username);
         }
     }
 }

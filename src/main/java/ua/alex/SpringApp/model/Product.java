@@ -67,4 +67,15 @@ public class Product {
     public void setInfo(String info) {
         this.info = info;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", producer='" + producer + '\'' +
+                ", cost=" + cost +
+                ", info='" + info + '\'' +
+                '}';
+    }
 }

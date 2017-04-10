@@ -32,7 +32,7 @@ public class ProductController {
         return "products";
     }*/
 
-    @RequestMapping(value = "products/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/add", method = RequestMethod.POST)
     public String addProduct(@ModelAttribute Product product){
         if (product.getId()==0){
             productService.add(product);
@@ -48,14 +48,14 @@ public class ProductController {
         return "redirect:/admin";
     }
 
-    @RequestMapping(value = "/edit/{id}")
+    @RequestMapping(value = "edit/{id}")
     public String editProduct(@PathVariable("id") int id, Model model){
         model.addAttribute("product", productService.getById(id));
         model.addAttribute("listproducts", productService.getAll());
         return "admin";
     }
 
-    @RequestMapping(value = "/productdata/{id}")
+    @RequestMapping(value = "productdata/{id}")
     public String productData(@PathVariable("id") int id, Model model){
         model.addAttribute("product", productService.getById(id));
         return "productdata";

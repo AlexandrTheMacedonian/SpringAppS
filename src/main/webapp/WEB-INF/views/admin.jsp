@@ -1,7 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
+<%@ page session="false" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
@@ -17,6 +17,10 @@
     <title>Admin</title>
 
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
     <style type="text/css">
         .tg {
@@ -76,12 +80,12 @@
         <c:forEach items="${listproducts}" var="product">
             <tr>
                 <td>${product.id}</td>
-                <td>${product.name}</td>
+                <td><a href="/productdata/${product.id}">${product.name}</a></td>
                 <td>${product.producer}</td>
                 <td>${product.cost}</td>
                 <td>${product.info}</td>
-                <td><a href="<c:url value='/edit/${product.id}'/>">">Edit</a></td>
-                <td><a href="<c:url value='/delete/${product.id}'/>">">Delete</a></td>
+                <td><a href="<c:url value='/edit/${product.id}'/>">Edit</a></td>
+                <td><a href="<c:url value='/delete/${product.id}'/>">Delete</a></td>
             </tr>
         </c:forEach>
     </table>
@@ -89,7 +93,7 @@
 
 <h1>Add a Product</h1>
 
-<c:url var="addAction" value="/products/add"/>
+<c:url var="addAction" value="/admin/add"/>
 
 <form:form action="${addAction}" commandName="product">
     <table>
