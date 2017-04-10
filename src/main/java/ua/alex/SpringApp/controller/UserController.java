@@ -11,15 +11,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ua.alex.SpringApp.model.Product;
-import ua.alex.SpringApp.model.Role;
 import ua.alex.SpringApp.model.User;
 import ua.alex.SpringApp.service.ProductService;
 import ua.alex.SpringApp.service.SecurityService;
 import ua.alex.SpringApp.service.UserService;
 import ua.alex.SpringApp.validator.UserValidator;
 
-import java.util.Iterator;
 import java.util.Set;
+
+/**
+ * Controller for {@link User}.
+ */
 
 @Controller
 public class UserController {
@@ -74,8 +76,8 @@ public class UserController {
         model.addAttribute("product", new Product());
         model.addAttribute("listproducts", productService.getAll());
         Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
-        if (roles.contains("ROLE_ADMIN")) {return "admin";}
-        else {return "welcome";}
+        if (roles.contains("ROLE_ADMIN")) return "admin";
+        else return "welcome";
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)

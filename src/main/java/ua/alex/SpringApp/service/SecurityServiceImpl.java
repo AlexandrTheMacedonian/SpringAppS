@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class SecurityServiceImpl implements SecurityService {
 
-
     private static final Logger logger = LoggerFactory.getLogger(SecurityServiceImpl.class);
 
     @Autowired
@@ -25,7 +24,6 @@ public class SecurityServiceImpl implements SecurityService {
 
     @Autowired
     private UserDetailsService userDetailsService;
-
 
     @Override
     public String findLoggedInUsername() {
@@ -42,7 +40,6 @@ public class SecurityServiceImpl implements SecurityService {
         UsernamePasswordAuthenticationToken authenticationToken =
                 new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
         authenticationManager.authenticate(authenticationToken);
-
         if (authenticationToken.isAuthenticated()) {
             SecurityContextHolder.getContext().setAuthentication(authenticationToken);
             logger.debug("Successfully %s auto logged in", username);

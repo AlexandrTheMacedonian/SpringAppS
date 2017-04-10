@@ -12,7 +12,7 @@ import ua.alex.SpringApp.model.Product;
 import ua.alex.SpringApp.service.ProductService;
 
 /**
- * Service layer.
+ * Controller for {@link Product}.
  */
 @Controller
 public class ProductController {
@@ -24,13 +24,6 @@ public class ProductController {
     public void setProductService(ProductService productService) {
         this.productService = productService;
     }
-
-   /* @RequestMapping(value = "products", method = RequestMethod.GET)
-    public String listProducts(Model model){
-        model.addAttribute("product", new Product());
-        model.addAttribute("listproducts", productService.getAll());
-        return "products";
-    }*/
 
     @RequestMapping(value = "/admin/add", method = RequestMethod.POST)
     public String addProduct(@ModelAttribute Product product){
